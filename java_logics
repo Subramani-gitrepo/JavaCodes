@@ -1,0 +1,496 @@
+1.java program to find maximum element in given array
+class maxElement 
+{
+public static void main(String[] args)
+{
+int a[]={1,3,4,5,6,9,2,7};
+int max=a[0];
+for(int i=1;i<a.length;i++)
+{
+if(a[i]>max)
+{
+max=a[i];
+}
+}
+System.out.println("maximum element in array is:"+max);
+}
+}
+2.java program to find minimum element in given array
+class MinElement
+{
+public static void main(String ags[])
+{
+int a[]={8,3,4,5,6,9,2,7};
+int min=a[0];
+for(int i=1;i<a.length;i++)
+{
+if(a[i]<min)
+{
+min=a[i];
+}
+}
+System.out.println("minimum element in array is:"+min);
+}
+}
+3.java program to find missing element in a given array
+package com.capgemini;
+import java.util.HashSet;
+public class Missing {
+	public static void main(String ags[])
+	{
+	int[] x={1,2,3,5,7,9,11,13,23,49};
+	HashSet<Integer>missing=new HashSet<Integer>();
+	for(int i=0;i<x.length-1;i++)
+	{
+	  int cur=x[i];
+	    int next=x[i+1];
+	     int diff=next-cur;
+	   if(diff>1)
+	   {
+	     for(int j=1;j<=diff-1;j++)
+	      {
+	        missing.add(cur+j);
+	      }
+	   }
+	}
+	System.out.println(missing.toString());
+	}
+------------------------------------------------------
+4.java program to find factorial of number 
+class Factorial
+{
+public static void main(String ags[])
+{
+int num=4;
+int fact=num;
+while(num>1)
+{
+num--;
+fact=fact*num;
+}
+System.out.println(fact);
+}
+}
+5.write a java program to count the frequency of given string
+class StringFrequency
+{
+public static void main(String ags[])
+{
+String str="java programmer";
+int[] freq=new int[str.length()];
+int i,j;
+char string[]=str.toCharArray();
+for(i=0;i<str.length();i++)
+{
+freq[i]=1;
+for(j=i+1;j<str.length();j++)
+{
+if(string[i]==string[j])
+{
+freq[i]++;
+string[j]='o';
+}
+}
+}
+System.out.println("character and corresponding frequencies");
+for(i=0;i<freq.length;i++)
+{
+if(string[i] !=''&&string[i] !='o')
+System.out.println(string[i]+"-"+freq[i]);
+}
+}
+}
+///using another approach using hashmap
+package com.ltts;
+
+import java.util.HashMap;
+import java.util.Map;
+
+public class Repeat {
+	public static void main(String[] args) {
+ String str="aabbcdaee";
+ Map<Character,Integer>hm=new HashMap<>();//indexOf
+ for(int i=str.length()-1;i>=0;i--)
+ {
+	 if(hm.containsKey(str.charAt(i)))
+      {
+		 int count=hm.get(str.charAt(i));
+		 hm.put(str.charAt(i),++count);
+      }
+	 else
+	 {
+		 hm.put(str.charAt(i),1);
+				 
+	 }
+ }
+  System.out.println(hm);
+	}
+}
+
+6.java program to find maximum repeted charater in a given string
+
+import java.util.*;
+class MaxRepetedChar
+{
+public static void main(String ags[])
+{
+String str="java programmer";
+str=str.replaceAll("\\s","");
+HasMap<Character,Integer>hm= new HashMap<Character,Integer>();
+char[] c=str.toCharArray();
+for(char ch:c)
+{
+if(hm.containsKey(ch))
+{
+hm.put(ch,hm.get(ch)+1);
+}
+else
+{
+hm.put(ch,1);
+}
+}
+int maxCount=0;
+char maxChar='';
+for(Map.Entry<Character,Integer> me:hm.entrySet())
+{
+if(maxCount<me.getValue())
+{
+maxCount=me.getValue();
+maxChar=me.getKey();
+}
+}
+System.out.println("maximum repeted character is":+maxChar)[
+}
+}
+
+7.java program to reverse a string and palindrome string
+
+class ReverseString
+{
+public static void main(String ags[])
+{
+String str="radar";
+String str2="";
+for(int i=str.length()-1;i>=0;i--)
+{
+str2=str2+str.CharAt(i);
+}
+System.out.println(str2);
+if(str2.equals(str))
+{
+System.out.println("given string is palindrome");
+}
+else
+{
+System.out.println("given string is not a palindrome");
+}
+}
+}
+
+
+
+8. write a java program to linear search in array and find the index position of given element 
+
+class Linear Search
+{
+public static void main(String ags[])
+{
+int a[]={3,40,20,34,75,67};
+int Key=75;
+int i=0;
+for(i=0;i<a.length;i++)
+{
+if(Key==a[i])
+{
+System.out.println("present in"+i+"position");
+break;
+}
+i=i++;
+}
+if(i==a.length)
+{
+System.out.println(key+"is not present in Array");
+}
+}
+}
+
+9.java program to count of any character in given string
+
+class CountChar
+{
+public static void main(String ags[])
+{
+String str="program";
+char search='r';
+int count=0;
+for(int i=0;i<str.length();i++)
+{
+if(search==str.charAt(i))
+count++;
+System.out.println("Count of search is"+count);
+}
+}
+
+12.java program to find second largest element in array
+
+package com.itts;
+public class SecongLargeElement{
+public static void main(String[] args)
+{
+int[] a={3,4,2,5,7,9,8,10};  // todo auto generated method stub
+ int temp=0;
+for(int i=0;i<a.length;i++)
+{
+for(int j=i+1;j<a.length;j++)
+{
+if(a[i]<a[j])
+{
+temp=a[i];
+a[i]=a[j];
+a[j]=temp;
+}
+}
+}
+System.out.println("second largest element"+a[1]);
+}
+}
+
+
+13. write a java program to find second smallest element in array
+
+package com.ltts;
+public class SecondSmallest Element{
+
+public static void main(String[] args)
+{
+int[] a={3,4,2,5,7,9,8,10};     // todo auto generated method stub
+int temp=0;
+for(int i=0;i<a.length;i++)
+{
+for(int j=i+1;j<a.length;j++)
+{
+if(a[i]>a[j])
+{
+temp=a[i];
+a[i]=a[j];
+a[j]=temp;
+}
+}
+}
+System.out.println("second smallest element"+a[1]);
+}
+}
+
+
+14.write a java program to count the words in given string
+class CountWords
+{
+public static void main(String[] args)
+{
+String s="sharma is a good player and he is briliant";
+String words[]=s.split(" ");
+System.out.println("the number of words present in the string are:"+words.length);
+}
+}
+
+
+15.java programs to find fibonacci series 
+
+class Fibonacci{
+
+public static void main(String[] args)
+{
+int n1=0,n2=1,n3,i,count=10;
+System.out.print(n1+""+n2);//printing 0 and 1
+
+for(i=2;i<count;++i) //loop starts from 2 because o and 1 are already printed 
+{
+n3=n1+n2;
+System.out.print(""+n3);
+n1=n2;
+n2=n3;
+}
+}
+}
+
+
+16. number pattern in javaprogram
+
+1
+12
+123
+
+class NumPattern
+{
+public static void main(String[] args)
+{
+int n=4;
+for(int i=1;i<4;i++)
+{
+for(int j=1;j<i;j++)
+{
+System.out.print(j);
+}
+System.out.println(i);
+}
+}
+}
+
+
+17.write a ajva program to repeated character in a given string
+
+package com.dss;
+public class RepeatedCharacterlnString{
+
+public static void main(String[] args)
+{
+String str="window";   //todo autogenerated method stub
+char ch=str.charAt(0);
+boolean repeat=false;
+for(int i=1;i<str.length();i++)
+{
+if(ch==str.charAt(i))
+{
+repeat=true;
+}
+}
+System.out.println(ch+"repeated");
+}
+}
+
+18. java program to print prime numbers
+
+package com.dss;
+
+public class PrimeNum{
+public static void main(String[] args)
+{
+
+int n=6;   //todo auto generated method stub
+int temp=0;
+for(int i=2;i<n-1;i++)
+{
+if(n%i==0)
+{
+temp=temp+1;
+}
+}
+if(temp==0)
+{
+System.out.println(n+"is prime number");
+}
+else
+{
+System.out.println(n+" is not prime number");
+}
+}
+}
+
+
+19.java program to print even or odd numbers in a given  array
+
+
+package com.dss;
+
+import java.util.ArrayList;
+public class EvenorOddlnArray{
+
+public static void main(String[] args)
+{
+int[] a={1,3,4,5,6,7,9,8};  //todo auto generated method stub
+ArrayList<Integer> al1=new ArrayList<Integer>();
+ArrayList<Integer> al2=new ArrayList<Integer>();
+for(int i=0;i<a.length;i++)
+{
+if(a[i]%2==0)
+{
+al1.add(a[i]);
+}
+else
+{
+al2.add(a[i]);
+}
+}
+System.out.println(al2);
+}
+}
+
+
+
+20.java program to prime numbers between 1 to 100
+
+
+
+class PrimeBetween100
+{
+public static void main(String[] args)
+{
+
+for(int n=1;n<=100;n++)
+{
+int temp=0;
+for(int i=2;i<n-1;i++)
+{
+if(n%i==0)
+{
+temp=temp+1;
+}
+}
+if(temp==0)
+{
+System.out.println(n);
+}
+}
+}
+}
++++++++++++++++++++++++++++++++++++++++++++++
+21)write a java program to binary search tree
+class BinarySearch
+{
+ public static void main(String[] args)
+ {
+   int a[]={1,2,4,5,6,8,12,15,17,19,24};
+   int search=17;
+   int li=0;
+   int hi=a.length-1;
+   int mi=(li+hi/2);
+ while(li<=hi)
+ {
+  if(a[mi]==search)
+  {
+   System.out.println("element is at "+mi+" index position");
+   break;
+  }
+  else if(a[mi]<search)
+  {
+    li=mi+1;
+  }
+  else {
+       hi=mi-1;
+     }
+  mi=(li+hi)/2;
+}
+ if(li>hi)
+  {
+  System.out.println("element not found");
+  }
+}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
